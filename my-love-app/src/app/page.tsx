@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import CommentSection from '@/components/CommentSection';
 
 export default function Home() {
   const [posts, setPosts] = useState<{ title: string; content: string }[]>([]);
@@ -18,7 +19,7 @@ export default function Home() {
     <main className="min-h-screen bg-pink-50 flex flex-col items-center py-10 px-4">
       <div className="max-w-2xl w-full">
         <h1 className="text-4xl font-extrabold text-center text-pink-700 mb-8 drop-shadow-sm">
-          💌 우리의 추억 노트
+          💌 우리의 불평 노트
         </h1>
 
         <div className="bg-white shadow-md rounded-lg p-6 mb-8">
@@ -51,6 +52,7 @@ export default function Home() {
             >
               <h3 className="text-lg font-bold text-pink-700">{post.title}</h3>
               <p className="mt-2 text-gray-700 whitespace-pre-wrap">{post.content}</p>
+              <CommentSection />
             </div>
           ))}
         </div>
