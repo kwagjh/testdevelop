@@ -43,6 +43,26 @@ export default function Home() {
             글 올리기
           </button>
         </div>
+        
+        
+        <div className="mb-3">
+           <label className="block text-sm font-medium text-gray-700 mb-1">
+               📸 사진 업로드
+            </label>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e) => {
+                  const file = e.target.files?.[0];
+                  if (file) {
+                   console.log("선택된 파일:", file);
+        // 다음 단계에서 이 파일을 Azure에 업로드할 거야
+      }
+               }}
+            className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-pink-50 file:text-pink-700 hover:file:bg-pink-100"
+          />
+        </div>
+
 
         <div className="space-y-6">
           {posts.map((post, idx) => (
